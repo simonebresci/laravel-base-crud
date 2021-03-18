@@ -14,7 +14,8 @@ class ControllerBeer extends Controller
      */
     public function index()
     {
-        echo "Sono nel controllerBeer";
+        $beers = Beer::all();
+        return view('beer.index',compact('beers'));
     }
 
     /**
@@ -44,9 +45,13 @@ class ControllerBeer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Beer $beer)
     {
-        //
+        // echo "cerco la birra";
+        // $beer = Beer::find($id);
+        // echo "ciao";
+        // dd($beer);
+        return view('beer.show',compact('beer'));
     }
 
     /**

@@ -7,6 +7,13 @@
         <title>Laravel</title>
   <head>
   <body>
-    <a href="/beer">Vai a catalogo birre</a>
+    @foreach ($beers as $beer)
+      <b>Name: {{$beer->name}}</b> <br>
+      Type: {{$beer->type}} <br>
+      Quantity(L): {{$beer->quantityL}} <br>
+      Price: {{$beer->price}} <br>
+      Description: {{$beer->description}} <br>
+      <hr>
+    @endforeach
   </body>
 </html>
