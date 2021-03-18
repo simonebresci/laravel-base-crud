@@ -15,5 +15,7 @@
       Description: {{$beer->description}} <br>
       <hr>
     {{-- @endforeach --}}
+
+    
   </body>
 </html>
