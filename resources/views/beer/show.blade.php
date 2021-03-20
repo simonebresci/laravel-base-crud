@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
 
-        <title>Laravel</title>
-  <head>
-  <body>
+@section('content')
+  <div class="main-content">
     {{-- @foreach ($beers as $beer) --}}
+    <div class="beer-show">
       <b>Name: {{$beer->name}}</b> <br>
       Type: {{$beer->type}} <br>
       Quantity(L): {{$beer->quantityL}} <br>
       Price: {{$beer->price}} <br>
       Description: {{$beer->description}} <br>
-      Img Path: {{$beer->img_path}} <br>
-      <hr>
+      {{-- Img Path: {{$beer->img_path}} <br> --}}
+      <img class="beer-show-img" src="{{$beer->img_path}}" alt="Immagine birra">
+    </div>
+
     {{-- @endforeach --}}
 
 
-  </body>
-</html>
+  </div>
+@endsection

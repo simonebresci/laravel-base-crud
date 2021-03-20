@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
 
-        <title>Laravel</title>
-  <head>
-  <body>
-    <a href="/beer">Vai a catalogo birre</a>
-  </body>
-</html>
+@section('content')
+  <div class="main-content">
+    <img class="beer-list-img" src="https://i.pinimg.com/originals/c6/1c/a5/c61ca5bebd5fac190227f602ab0d6fe8.png">
+      <a href="/beer">Vai a catalogo birre</a>
+    <img class="beer-list-img" src="https://i.pinimg.com/originals/c6/1c/a5/c61ca5bebd5fac190227f602ab0d6fe8.png">
+  </div>
+
+@endsection

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <title>Laravel</title>
-  <head>
-  <body>
+@extends('layout')
+
+@section('content')
+  <div class="main-content">
     {{-- @foreach ($beers as $beer)
       <b>Name: {{$beer->name}}</b> <br>
       Type: {{$beer->type}} <br>
@@ -32,19 +27,19 @@
         @foreach ($beers as $beer)
         <tr>
 
-          <td>{{$beer->id}}</td>
-          <td>{{$beer->name}}</td>
+          <td><a href="/beer/{{$beer->id}}">{{$beer->id}}</a></td>
+          <td><a href="/beer/{{$beer->id}}"><img class="beer-index-icon"src="{{$beer->img_path}}" alt="icona birra"></a></td>
+          <td><a href="/beer/{{$beer->id}}">{{$beer->name}}</a></td>
           <td>{{$beer->type}}</td>
           <td>{{$beer->quantityL}}</td>
           <td>{{$beer->price}}</td>
           <td>{{$beer->description}}</td>
-          <td>{{$beer->img_path}}</td>
+
+          </a>
         </tr>
         @endforeach
 
      </tbody>
    </table>
-
-
-  </body>
-</html>
+ </div>
+@endsection
