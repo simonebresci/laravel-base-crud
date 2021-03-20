@@ -25,7 +25,7 @@ class ControllerBeer extends Controller
      */
     public function create()
     {
-        //
+        return view('beer.create');
     }
 
     /**
@@ -36,7 +36,29 @@ class ControllerBeer extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "pagina di store";
+
+        //Prendi dati da request Http
+        $data = $request->all();
+        // Crea nuovo oggetto birra
+        $beer = new Beer();
+
+        // Riempi i campi dell'oggetto - versione lunga
+        // $beer->name = $data['name'];
+        // $beer->type = $data['type'];
+        // $beer->quantityL = $data['quantityL'];
+        // $beer->price = $data['price'];
+        // $beer->description = $data['description'];
+
+        // Riempi i campi dell'oggetto - versione compatta
+        $beer->fill($data); //Regole di fill descritte nel modello Beer
+
+        // Salva nuovo oggetto in db
+        $beer->save();
+
+        // Redirect su nuova birra salvata
+        $beerStored = Beer::orderBy('id','desc')->first();
+        return redirect()->route('beer.show',$beerStored);
     }
 
     /**
