@@ -7,6 +7,19 @@
         <title>Create your Beer</title>
   <head>
   <body>
+    {{-- Messaggio di errore nella creazione birra --}}
+    @if ($errors->any())
+      <div class="alert alert-danger">
+
+       <ul>
+         @foreach ($errors->all() as $error)
+         <li>{{ $error }}</li>
+         @endforeach
+       </ul>
+
+       </div>
+    @endif
+    {{-- /Messaggio di errore nella creazione birra --}}
 
     <h2>Crea la tua birra preferita!</h2>
 

@@ -40,6 +40,16 @@ class ControllerBeer extends Controller
 
         //Prendi dati da request Http
         $data = $request->all();
+
+        // Valida il dato
+        $request->validate([
+          'name' => 'required | max:255',
+          'type' => 'required | max:40',
+          'quantityL' => 'required | numeric',
+          'price' => 'required | numeric',
+          'description' => 'required | max:2048'
+        ]);
+
         // Crea nuovo oggetto birra
         $beer = new Beer();
 
