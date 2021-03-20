@@ -25,6 +25,7 @@
           <th scope="col">Quantity(L)</th>
           <th scope="col">Price</th>
           <th scope="col">Descrition</th>
+          <th scope="col">Img</th>
         </tr>
       </thead>
       <tbody>
@@ -37,6 +38,7 @@
           <td>{{$beer->quantityL}}</td>
           <td>{{$beer->price}}</td>
           <td>{{$beer->description}}</td>
+          <td>{{$beer->img_path}}</td>
         </tr>
         @endforeach
 

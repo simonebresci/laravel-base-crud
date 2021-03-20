@@ -20,6 +20,7 @@ class CreateBeersTable extends Migration
             $table->float('quantityL', 5, 2);
             $table->float('price', 6, 2);
             $table->longText('description');
+            $table->longText('img_path');
             $table->timestamps();
         });
     }

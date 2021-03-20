@@ -45,6 +45,9 @@
        <label for="content">Description</label>
        <input type="text" name="description" placeholder="Description">
 
+       <label for="content">Img Path</label>
+       <input type="text" name="img_path" placeholder="Img Path">
+
 
        <input type="submit" value="Invia">
     </form>

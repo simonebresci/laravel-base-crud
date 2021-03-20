@@ -13,9 +13,10 @@
       Quantity(L): {{$beer->quantityL}} <br>
       Price: {{$beer->price}} <br>
       Description: {{$beer->description}} <br>
+      Img Path: {{$beer->img_path}} <br>
       <hr>
     {{-- @endforeach --}}
 
-    
+
   </body>
 </html>

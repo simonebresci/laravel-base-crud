@@ -47,7 +47,8 @@ class ControllerBeer extends Controller
           'type' => 'required | max:40',
           'quantityL' => 'required | numeric',
           'price' => 'required | numeric',
-          'description' => 'required | max:2048'
+          'description' => 'required | max:2048',
+          'img_path' => 'required | max:2048'
         ]);
 
         // Crea nuovo oggetto birra
