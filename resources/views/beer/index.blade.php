@@ -26,7 +26,7 @@
       <tbody>
         @foreach ($beers as $beer)
         <tr>
-
+          {{-- utilizza ruote anzichè link diretto --}}
           <td><a href="/beer/{{$beer->id}}">{{$beer->id}}</a></td>
           <td><a href="/beer/{{$beer->id}}"><img class="beer-index-icon"src="{{$beer->img_path}}" alt="icona birra"></a></td>
           <td><a href="/beer/{{$beer->id}}">{{$beer->name}}</a></td>

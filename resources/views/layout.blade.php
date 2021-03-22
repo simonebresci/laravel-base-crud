@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> --}}
+        {{-- Font awesome installato tramite npm --}}
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <title>Laravel</title>
   <head>
   <body>
     <header>
       <div class="header-container">
-      
+
         {{-- BOOTSTRAP NAVBAR --}}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#">BEER STORE</a>
@@ -38,6 +39,7 @@
       <div class="container p-4">
         <!-- Section: Social media -->
         <section class="mb-4">
+
           <!-- Facebook -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
             ><i class="fab fa-facebook-f"></i
