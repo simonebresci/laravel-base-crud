@@ -36,7 +36,6 @@ class ControllerBeer extends Controller
      */
     public function store(Request $request)
     {
-        echo "pagina di store";
 
         //Prendi dati da request Http
         $data = $request->all();
@@ -93,9 +92,11 @@ class ControllerBeer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Beer $beer)
     {
-        //
+        echo "sono nell'edit";
+        return view('beer.edit', compact('beer'));
+
     }
 
     /**
@@ -105,9 +106,13 @@ class ControllerBeer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Beer $beer)
     {
-        //
+        echo "sono nel beerUpdate";
+        $data = $request->all();
+        $beer->update($data);
+
+        return redirect()->route('beer.show',compact('beer'));
     }
 
     /**
@@ -116,8 +121,8 @@ class ControllerBeer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Beer $beer)
     {
-        //
+        echo "sono nel destroy";
     }
 }
