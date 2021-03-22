@@ -94,7 +94,6 @@ class ControllerBeer extends Controller
      */
     public function edit(Beer $beer)
     {
-        echo "sono nell'edit";
         return view('beer.edit', compact('beer'));
 
     }
@@ -108,7 +107,6 @@ class ControllerBeer extends Controller
      */
     public function update(Request $request, Beer $beer)
     {
-        echo "sono nel beerUpdate";
         $data = $request->all();
         $beer->update($data);
 
@@ -123,6 +121,7 @@ class ControllerBeer extends Controller
      */
     public function destroy(Beer $beer)
     {
-        echo "sono nel destroy";
+        $beer->delete();
+        return redirect()->route('beer.index');
     }
 }

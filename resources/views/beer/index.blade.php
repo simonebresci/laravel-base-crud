@@ -38,7 +38,14 @@
           <td>
             <a href={{route('beer.show',compact('beer'))}}>VIEW</a>
             <a href={{route('beer.edit',compact('beer'))}}>EDIT</a>
-            <a href={{route('beer.destroy',compact('beer'))}}>DESTROY</a>
+
+            <form  action={{route('beer.destroy', compact('beer'))}}  method="post">
+              @csrf
+              @method('DELETE')
+
+              <button type="submit" class="btn btn-default">DELETE</button>
+
+            </form>
           </td>
 
 
