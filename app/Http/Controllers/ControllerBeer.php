@@ -94,6 +94,7 @@ class ControllerBeer extends Controller
      */
     public function edit(Beer $beer)
     {
+
         return view('beer.edit', compact('beer'));
 
     }
@@ -108,6 +109,18 @@ class ControllerBeer extends Controller
     public function update(Request $request, Beer $beer)
     {
         $data = $request->all();
+
+        // Valida il dato
+        $request->validate([
+          'name' => 'required | max:255',
+          'type' => 'required | max:40',
+          'quantityL' => 'required | numeric',
+          'price' => 'required | numeric',
+          'description' => 'required | max:2048',
+          'img_path' => 'required | max:2048'
+        ]);
+
+
         $beer->update($data);
 
         return redirect()->route('beer.show',compact('beer'));
