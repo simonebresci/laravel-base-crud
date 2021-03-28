@@ -3,24 +3,17 @@
 @php
 if (isset($edit) && !empty($edit)){
     // EDIT CASE
-    echo "EDIT <br>";
     $method = 'PUT';
     $url = route('beer.update', compact('beer'));
-    $values = "compact('beer')";
-    echo $url;
 }else{
     // CREATE CASE
-    // echo "CREATE";
     $url = route('beer.store');
     $method = 'POST';
-    $beer = null;
-    // $values = '';
-    echo $url;
 }
 @endphp
 
 
-<form class="form-horizontal" action={{$url}}  method="post">
+<form class="form-horizontal text-left" action={{$url}}  method="post">
   @csrf
   @method($method)
 
@@ -100,7 +93,7 @@ if (isset($edit) && !empty($edit)){
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-default btn-primary">Submit</button>
     </div>
   </div>
 
